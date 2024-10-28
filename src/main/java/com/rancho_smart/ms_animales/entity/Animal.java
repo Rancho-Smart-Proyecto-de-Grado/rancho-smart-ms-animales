@@ -29,22 +29,28 @@ public class Animal {
     @Column(name = "FECHA_NACIMIENTO")
     private LocalDateTime fechaNacimiento;
 
-    @Column(name = "DESCRIPCION")
-    private String descripcion;
+    @Column(name = "ETAPA")
+    private Etapa etapa;
 
     @Column(name = "ID_USUARIO")
     private Long idUsuario;
+
+    @Column(name = "ID_FINCA")
+    private Long idFinca;
+
+    @Column(name = "ID_LOTE")
+    private Long idLote;
 
     public Animal() {
     }
 
     public Animal(String nombre, char genero, String raza, LocalDateTime fechaNacimiento, String descripcion,
-            Long idUsuario) {
+            Etapa etapa, Long idUsuario) {
         this.nombre = nombre;
         this.genero = genero;
         this.raza = raza;
         this.fechaNacimiento = fechaNacimiento;
-        this.descripcion = descripcion;
+        this.etapa = etapa;
         this.idUsuario = idUsuario;
     }
 
@@ -87,20 +93,20 @@ public class Animal {
     public void setFechaNacimiento(LocalDateTime fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
+    
     public Long getIdUsuario() {
         return idUsuario;
     }
 
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public Etapa getEtapa() {
+        return etapa;
+    }
+
+    public void setEtapa(Etapa etapa) {
+        this.etapa = etapa;
     }
 }

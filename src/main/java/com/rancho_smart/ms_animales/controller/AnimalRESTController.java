@@ -19,7 +19,7 @@ import com.rancho_smart.ms_animales.entity.Animal;
 import com.rancho_smart.ms_animales.service.AnimalService;
 
 @RestController
-@RequestMapping(path = "/animal")
+@RequestMapping(path = "/animales")
 public class AnimalRESTController {
     
     @Autowired
