@@ -41,17 +41,51 @@ public class Animal {
     @Column(name = "ID_LOTE")
     private Long idLote;
 
+    @Column(name = "FOTO")
+    private byte[] foto;
+    
     public Animal() {
     }
 
-    public Animal(String nombre, char genero, String raza, LocalDateTime fechaNacimiento, String descripcion,
-            Etapa etapa, Long idUsuario) {
+    
+
+    public Animal(String nombre, char genero, String raza, LocalDateTime fechaNacimiento, Etapa etapa, Long idUsuario,
+            Long idFinca, Long idLote, byte[] foto) {
         this.nombre = nombre;
         this.genero = genero;
         this.raza = raza;
         this.fechaNacimiento = fechaNacimiento;
         this.etapa = etapa;
         this.idUsuario = idUsuario;
+        this.idFinca = idFinca;
+        this.idLote = idLote;
+        this.foto = foto;
+    }
+
+
+
+    public Long getIdFinca() {
+        return idFinca;
+    }
+
+    public void setIdFinca(Long idFinca) {
+        this.idFinca = idFinca;
+    }
+
+    public Long getIdLote() {
+        return idLote;
+    }
+
+    public void setIdLote(Long idLote) {
+        this.idLote = idLote;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
 
     public Long getIdAnimal() {
