@@ -47,8 +47,6 @@ public class Animal {
     public Animal() {
     }
 
-    
-
     public Animal(String nombre, char genero, String raza, LocalDateTime fechaNacimiento, Etapa etapa, Long idUsuario,
             Long idFinca, Long idLote, byte[] foto) {
         this.nombre = nombre;
