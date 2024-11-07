@@ -19,6 +19,18 @@ public class AnimalService {
         return this.animalRepository.findAll();
     }
 
+    public List<Animal> getAnimalesByIdFinca(Long idFinca){
+        return this.animalRepository.findByIdFinca(idFinca);
+    }   
+
+    public List<Animal> getAnimalesByIdLote(Long idLote){
+        return this.animalRepository.findByIdLote(idLote);
+    }
+
+    public List<Animal> getAnimalesByIdUsuario(Long idUsuario){
+        return this.animalRepository.findByIdUsuario(idUsuario);
+    }
+
     public Optional<Animal> getAnimalById(Long id) {
         return this.animalRepository.findById(id);
     }

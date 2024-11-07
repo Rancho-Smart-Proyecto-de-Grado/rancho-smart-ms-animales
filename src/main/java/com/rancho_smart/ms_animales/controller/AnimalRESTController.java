@@ -38,6 +38,36 @@ public class AnimalRESTController {
                      .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("/finca/{idFinca}")
+    public ResponseEntity<List<Animal>> getAnimalByIdFinca(@PathVariable Long idFinca){
+        List<Animal> animalesFinca = this.animalService.getAnimalesByIdFinca(idFinca);
+        if(!animalesFinca.isEmpty()){
+            return new ResponseEntity<>(animalesFinca, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    } 
+
+    @GetMapping("/lote/{idLote}")
+    public ResponseEntity<List<Animal>> getAnimalByIdLote(@PathVariable Long idLote){
+        List<Animal> animalesLote = this.animalService.getAnimalesByIdLote(idLote);
+        if(!animalesLote.isEmpty()){
+            return new ResponseEntity<>(animalesLote, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<List<Animal>> getAnimalByIdUsuario(@PathVariable Long idUsuario){
+        List<Animal> animalesUsuario = this.animalService.getAnimalesByIdUsuario(idUsuario);
+        if(!animalesUsuario.isEmpty()){
+            return new ResponseEntity<>(animalesUsuario, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    }
+
     @PostMapping
     public ResponseEntity<Animal> saveAnimal(@RequestBody Animal animal) {
         Animal animalCreado = this.animalService.saveAnimal(animal);
